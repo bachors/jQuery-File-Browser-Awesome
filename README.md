@@ -1,8 +1,6 @@
 jQuery-File-Browser-Awesome
 ===========================
 
-jQuery File Browser Awesome
-
 <h1>Setting scandir.php</h1>
 <pre>
 // Tentukan dulu URL path direktori yang akan di scan. Example:
@@ -15,4 +13,4 @@ $path = "http://domain.com/download/file";
 $path = "http://domain.com/scandir.php";
 </pre>
 
-<a href="http://ibacor.com/file/" target="_blank"><h1>DEMO</h1></a>
+<h1><a href="http://ibacor.com/file/" target="_blank">DEMO</a></h1>
