@@ -1,0 +1,52 @@
+body {
+	background: #222
+}
+
+.ibc_fba table{
+	background: #222;
+	color: #fff;
+	width: 100%;
+	padding: 10px
+}
+
+.ibc_fba th{
+	color: #65d460
+}
+
+.ibc_fba th, .ibc_fba td{
+	padding: 5px
+}
+
+.ibc_fba td.root{
+	background: #444;
+	text-align: left
+}
+
+.ibc_fba td.name, .ibc_fba th.name {
+	text-align: left
+}
+
+.ibc_fba td.size, .ibc_fba th.size, .ibc_fba td.modif, .ibc_fba th.modif {
+	text-align: right
+}
+
+.ibc_fba a {
+	color: #fff;
+	text-decoration: none
+}
+
+.ibc_fba .fa {
+	cursor: pointer
+}
+
+.ibc_fba .fa-folder {
+	color: #dcac3a
+}
+
+.ibc_fba .fa-file {
+	color: #9cd5fc
+}
+
+.ibc_fba .fa-reply {
+	color: #F26454
+}
