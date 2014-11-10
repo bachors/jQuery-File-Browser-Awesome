@@ -1,0 +1,14 @@
+jQuery-File-Browser-Awesome
+
+Today we want to share a cool experiment with you. It is a file browser awesome, which you can upload to a folder somewhere on your site and share documents, pictures and other files with the world. The app is built with PHP, jQuery, fontawesome and uses CSS3.
+Setting scandir.php
+
+// Tentukan dulu URL path direktori yang akan di scan. Example:
+$path = "http://domain.com/download/file";
+
+Setting fba.js
+
+/* Setting URL path scandir.php */
+$path = "http://domain.com/scandir.php";
+
+DEMO 
