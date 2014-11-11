@@ -86,23 +86,16 @@ function item($dir){
 	return $files;
 }
 
-// funsi ini untuk melihat isi file
-function tingalifile($dir,$file){
 
-	$sub = preg_replace("/$dir/", '', $file);
+if(!empty($_GET['file'])){
+
+	$sub = preg_replace("/$dir/", '', $_GET['file']);
 
 	$text = file_get_contents($dir.$sub);
 	
 	echo json_encode(array(
 		"text" => $text
 	));
-
-}
-
-
-if(!empty($_GET['file'])){
-
-	tingalifile($dir,$_GET['file']);
 
 }else{
 
