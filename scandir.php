@@ -8,6 +8,9 @@ error_reporting(0);
 * Updates will be posted to this site.
 *********************************************************************/
 
+if(empty($_GET['sub'])) 
+$_GET['sub'] = '';
+
 // Tentukan dulu URL path direktori yang akan di scan. Example: http://ibacor.com/download/file
 $path = "http://localhost/fba/download";
 
@@ -17,10 +20,6 @@ $link = dirname($path).'/';
 // Menentukan direktori yang akan di scan. Output: file
 $realpath = explode('/', $path);
 $dir = $realpath[sizeof($realpath)-1].$_GET['sub'];
-
-
-if(empty($_GET['sub'])) 
-$_GET['sub'] = '';
 
 // Jalankan fungsi scan
 $response = scan($dir,$link);
