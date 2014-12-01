@@ -9,8 +9,8 @@ $path = "http://domain.com/download/file";
 
 <h1>Setting fba.js</h1>
 <pre>
-/* Setting URL path scandir.php */
-$path = "http://domain.com/scandir.php";
+/* Setting base_URL path scandir.php */
+var baseurl = "http://domain.com/scandir.php";
 </pre>
 
 <h1><a href="http://ibacor.com/file/" target="_blank">DEMO</a></h1>
