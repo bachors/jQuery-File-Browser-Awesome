@@ -19,7 +19,6 @@ ibc_fba(baseurl,sub="",fix)
 
 function ibc_fba(baseurl,sub,fix) {
 	$.ajax( {
-		// Setting URL scandir.php
 		url:baseurl+'?sub='+sub,
 		crossDomain:true,
 		dataType:"json"
@@ -75,7 +74,6 @@ function ibc_fba(baseurl,sub,fix) {
 
 function ibc_fba_file(baseurl,file) {
 	$.ajax( {
-		// Setting URL scandir.php
 		url:baseurl+'?file='+file,
 		crossDomain:true,
 		dataType:"json"
