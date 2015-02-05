@@ -15,7 +15,12 @@ var fix = /\\/;
 var fix = /\//;
 */
 
-ibc_fba(baseurl,sub="",fix)
+var value = getParameterByName('dir');
+if(value != ''){
+	ibc_fba(scan,sub=value,fix);
+}else{
+	ibc_fba(baseurl,sub="",fix)
+}
 
 function ibc_fba(baseurl,sub,fix) {
 	$.ajax( {
@@ -57,11 +62,13 @@ function ibc_fba(baseurl,sub,fix) {
 		$(".sub").click(function() {
 			var t=$(this).data("sub");
 			ibc_fba(baseurl,t,fix);
+			window.history.pushState(null, null, "?dir="+t);
 			return false
 		});
 		$(".bsub").click(function() {
 			var t=$(this).data("bsub");
 			ibc_fba(baseurl,t,fix);
+			window.history.pushState(null, null, "?dir="+t);
 			return false
 		});
 		$(".rfile").click(function() {
@@ -88,4 +95,11 @@ function ibc_ukurana(e) {
 	if(e==0)return"0 Bytes";
 	var n=parseInt(Math.floor(Math.log(e)/Math.log(1024)));
 	return Math.round(e/Math.pow(1024,n),2)+" "+t[n]
+}
+
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
