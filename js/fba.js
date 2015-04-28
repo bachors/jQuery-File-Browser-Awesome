@@ -37,7 +37,7 @@ function ibc_fba(baseurl,sub,fix) {
 		$.each(data.items,function(i,item) {
 			var size=ibc_ukurana(data.items[i].size);
 			if(data.items[i].type=="folder") {
-				r+='<tr><td class="name"><span class="sub fa" data-sub="'+data.items[i].path+'"><i class="fa fa-folder"></i> '+data.items[i].name+'</span></td><td class="size">'+data.items[i].items.length+' item</td><td class="modif">'+data.items[i].modif+"</td></tr>"
+				r+='<tr><td class="name"><span class="sub fa" data-sub="'+data.items[i].path+'"><i class="fa fa-folder"></i> '+data.items[i].name+'</span></td><td class="size">'+data.items[i].items.length+' item</td><td class="modif">'+data.items[i].modif+'</td></tr>';
 			} else {
 				var s=data.items[i].path.substr(data.items[i].path.lastIndexOf(".")+1);
 				switch(s) {
@@ -47,15 +47,15 @@ function ibc_fba(baseurl,sub,fix) {
 					case"js":
 					case"css":
 					case"txt":
-					r+='<tr><td class="name"><span class="rfile fa" data-rfile="'+data.items[i].path+'"><i class="fa fa-file-text"></i> '+data.items[i].name+'</span></td><td class="size">'+size+'</td><td class="modif">'+data.items[i].modif+"</td></tr>";
+					r+='<tr><td class="name"><span class="rfile fa" data-rfile="'+data.items[i].path+'"><i class="fa fa-file-text"></i> '+data.items[i].name+'</span></td><td class="size">'+size+'</td><td class="modif">'+data.items[i].modif+'</td></tr>';
 					break;
 					// List download file
 					default:
-					r+='<tr><td class="name"><a href="'+data.items[i].link+data.items[i].path+'" target="_blank"><i class="fa fa-archive"></i> '+data.items[i].name+'</a></td><td class="size">'+size+'</td><td class="modif">'+data.items[i].modif+"</td></tr>"
+					r+='<tr><td class="name"><a href="'+data.items[i].link+data.items[i].path+'" target="_blank"><i class="fa fa-archive"></i> '+data.items[i].name+'</a></td><td class="size">'+size+'</td><td class="modif">'+data.items[i].modif+'</td></tr>';
 				}
 			}
 		});
-		r+='<tr><td colspan="3" style="text-align:center;font-size:8px;padding-top:30px">'+unescape("%3C%61%20%68%72%65%66%3D%22%68%74%74%70%3A%2F%2F%69%62%61%63%6F%72%2E%63%6F%6D%2F%6C%61%62%73%2F%6A%71%75%65%72%79%2D%66%69%6C%65%2D%62%72%6F%77%73%65%72%2D%61%77%65%73%6F%6D%65%2F%22%20%74%61%72%67%65%74%3D%22%5F%42%4C%41%4E%4B%22%3E%46%69%6C%65%20%42%72%6F%77%73%65%72%20%41%77%65%73%6F%6D%65%3C%2F%61%3E")+"</td></tr>";
+		r+='<tr><td colspan="3" style="text-align:center;font-size:8px;padding-top:30px">'+unescape("%3C%61%20%68%72%65%66%3D%22%68%74%74%70%3A%2F%2F%69%62%61%63%6F%72%2E%63%6F%6D%2F%6C%61%62%73%2F%6A%71%75%65%72%79%2D%66%69%6C%65%2D%62%72%6F%77%73%65%72%2D%61%77%65%73%6F%6D%65%2F%22%20%74%61%72%67%65%74%3D%22%5F%42%4C%41%4E%4B%22%3E%46%69%6C%65%20%42%72%6F%77%73%65%72%20%41%77%65%73%6F%6D%65%3C%2F%61%3E")+'</td></tr>';
 		r+="</tbody></table>";
 		$(".ibc_fba").html(r);
 		$("#ibc_fba_file").html('');
