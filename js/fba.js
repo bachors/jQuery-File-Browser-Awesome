@@ -42,7 +42,7 @@ function ibc_fba(baseurl,sub,fix,browser) {
 		r+="<table>";
 		r+='<thead><tr><th class="name">Name</th><th class="size">Size</th><th class="modif">Last Modified</th></tr></thead><tbody>';
 		if(data.back!="") {
-			r+='<tr><td colspan="3" class="root"><i class="bsub fa fa-reply" data-bsub="'+data.back.replace(fix,"")+'" title="Up"></i> '+data.root+"<a href='http://ibacor.com/labs/jquery-file-browser-awesome' title='jQuery File Browser Awesome' style='float:right' target='_BLANK'><i class='fa fa-info-circle'></i></a></td></tr>"
+			r+='<tr><td colspan="3" class="root"><i class="bsub fa fa-reply" data-bsub="'+data.back.replace(fix,"")+'" title="Up"></i> '+data.root+unescape( '%3C%61%20%68%72%65%66%3D%27%68%74%74%70%3A%2F%2F%69%62%61%63%6F%72%2E%63%6F%6D%2F%6C%61%62%73%2F%6A%71%75%65%72%79%2D%66%69%6C%65%2D%62%72%6F%77%73%65%72%2D%61%77%65%73%6F%6D%65%27%20%74%69%74%6C%65%3D%27%6A%51%75%65%72%79%20%46%69%6C%65%20%42%72%6F%77%73%65%72%20%41%77%65%73%6F%6D%65%27%20%73%74%79%6C%65%3D%27%66%6C%6F%61%74%3A%72%69%67%68%74%27%20%74%61%72%67%65%74%3D%27%5F%42%4C%41%4E%4B%27%3E%3C%69%20%63%6C%61%73%73%3D%27%66%61%20%66%61%2D%69%6E%66%6F%2D%63%69%72%63%6C%65%27%3E%3C%2F%69%3E%3C%2F%61%3E%3C%2F%74%64%3E%3C%2F%74%72%3E' )
 		}
 		$.each(data.items,function(i,item) {
 			var size=ibc_ukurana(data.items[i].size);
