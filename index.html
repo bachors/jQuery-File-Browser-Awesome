@@ -37,7 +37,7 @@
 		<div class="ibc_fba"></div>
 		
 		<!-- Read File -->
-		<div id="ibc_fba_file"></div>
+		<div id="ibc_fba_file"><div class="pan_code"><i class="fa fa-code pull-left"></i> <strong>Ctrl-F / Cmd-F:</strong> Start searching, <strong>Ctrl-G / Cmd-G:</strong> Find next, <strong>Shift-Ctrl-G / Shift-Cmd-G:</strong> Find previous, <strong>Shift-Ctrl-F / Cmd-Option-F:</strong> Replace, <strong>Shift-Ctrl-R / Shift-Cmd-Option-F:</strong> Replace all</div><textarea id="text" name="text">...</textarea><script>var editor = CodeMirror.fromTextArea(document.getElementById("text"), {	mode: "text/html", lineNumbers: true, theme: "monokai"});</script></div>
 
 	</body>
 </html>
