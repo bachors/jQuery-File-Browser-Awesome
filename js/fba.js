@@ -17,7 +17,7 @@ var fix = /\//;
 
 var value = getParameterByName('dir');
 if(value != ''){
-	ibc_fba(scan,sub=value,fix);
+	ibc_fba(baseurl,sub=value,fix);
 }else{
 	ibc_fba(baseurl,sub="",fix)
 }
