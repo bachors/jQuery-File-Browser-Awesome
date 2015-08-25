@@ -58,7 +58,6 @@ function ibc_fba(baseurl,sub,fix) {
 		r+='<tr><td colspan="3" style="text-align:center;font-size:8px;padding-top:30px">'+unescape("%3C%61%20%68%72%65%66%3D%22%68%74%74%70%3A%2F%2F%69%62%61%63%6F%72%2E%63%6F%6D%2F%6C%61%62%73%2F%6A%71%75%65%72%79%2D%66%69%6C%65%2D%62%72%6F%77%73%65%72%2D%61%77%65%73%6F%6D%65%2F%22%20%74%61%72%67%65%74%3D%22%5F%42%4C%41%4E%4B%22%3E%46%69%6C%65%20%42%72%6F%77%73%65%72%20%41%77%65%73%6F%6D%65%3C%2F%61%3E")+'</td></tr>';
 		r+="</tbody></table>";
 		$(".ibc_fba").html(r);
-		$("#ibc_fba_file").html('');
 		$(".sub").click(function() {
 			var t=$(this).data("sub");
 			ibc_fba(baseurl,t,fix);
@@ -85,8 +84,7 @@ function ibc_fba_file(baseurl,file) {
 		crossDomain:true,
 		dataType:"json"
 	}).done(function(data) {
-		var t='<div class="pan_code"><i class="fa fa-code pull-left"></i> <strong>Ctrl-F / Cmd-F:</strong> Start searching, <strong>Ctrl-G / Cmd-G:</strong> Find next, <strong>Shift-Ctrl-G / Shift-Cmd-G:</strong> Find previous, <strong>Shift-Ctrl-F / Cmd-Option-F:</strong> Replace, <strong>Shift-Ctrl-R / Shift-Cmd-Option-F:</strong> Replace all</div><textarea id="text" name="text">'+data.text+'</textarea><script>var editor = CodeMirror.fromTextArea(document.getElementById("text"), {	mode: "text/html", lineNumbers: true, theme: "monokai"});</script>';
-		$("#ibc_fba_file").html(t)
+		editor.setValue(data.text);
 	});
 }
 
