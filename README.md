@@ -11,6 +11,9 @@ $path = "http://domain.com/download/file";
 <pre>
 /* Setting base_URL path scandir.php */
 var baseurl = "http://domain.com/scandir.php";
+
+// Folder yang akan discan
+var browser = 'download';
 </pre>
 
 <h1><a href="http://ibacor.com/file/" target="_blank">DEMO</a></h1>
