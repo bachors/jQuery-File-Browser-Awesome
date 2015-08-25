@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
-body {
+#ibc_konten {
 	font-family: "Open Sans";
 	font-size: 14px;
 	background: #fff;
-	padding-left:20%;
-	padding-right:20%
+	margin-left:20%;
+	margin-right:20%
 }
 
 .ibc_fba table{
@@ -101,15 +101,15 @@ body {
 }
 
 @media (min-width:768px)and (max-width:991px) {
-    body {
-		padding-left:10%;
-		padding-right:10%
+    #ibc_konten {
+		margin-left:10%;
+		margin-right:10%
 	}
 }
 
 @media (min-width:320px)and (max-width:768px) {
-    body {
-		padding-left:5%;
-		padding-right:5%
+    #ibc_konten {
+		margin-left:5%;
+		margin-right:5%
 	}
 }
