@@ -1,16 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
 body {
-	background: #222
+	font-family: "Open Sans";
+	font-size: 14px;
+	background: #fff;
+	padding-left:20%;
+	padding-right:20%
 }
 
 .ibc_fba table{
-	background: #222;
-	color: #fff;
+	background: #E6F1F6;
+	color: #4E575B;
 	width: 100%;
-	padding: 10px
+	padding: 0px;
+	border: 1px solid #B7C7CF;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 
 .ibc_fba th{
-	color: #65d460
+	color: #333
+}
+
+.ibc_fba td{
+	background: #F8F8F8;
+	color: #767676
 }
 
 .ibc_fba th, .ibc_fba td{
@@ -18,7 +32,8 @@ body {
 }
 
 .ibc_fba td.root{
-	background: #444;
+	background: #fff;
+	font-weight: bold;
 	text-align: left
 }
 
@@ -31,44 +46,46 @@ body {
 }
 
 .ibc_fba a {
-	color: #fff;
+	color: #4078C0;
 	text-decoration: none
 }
+
+.ibc_fba .rfile,.ibc_fba .sub {
+	font-family: "Open Sans";
+	color: #4078C0
+}
+
 
 .ibc_fba .fa {
 	cursor: pointer
 }
 
 .ibc_fba .fa-folder {
-	color: #dcac3a
+	color: #80A6CD
 }
 
-.ibc_fba .fa-file-text {
-	color: #9cd5fc
+.ibc_fba .fa-file-text-o {
+	color: #767676
 }
 
-.ibc_fba .fa-archive {
+.ibc_fba .fa-cloud-download {
 	color: #ea97f4
 }
 
 .ibc_fba .fa-reply {
-	color: #F26454
+	color: #ccc
 }
 
 #ibc_fba_file .pan_code {
-	background-color:#111;
-	border:1px solid #000;
-	color: #fff;
+	background-color: #FCF8E3;
+	border-color: #FAEBCC;
+	color: #8A6D3B;
 	padding:10px;
 	margin-top:10px;
 	margin-bottom:10px;
 	border-radius:4px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
-}
-
-#ibc_fba_file .pan_code strong {
-	color: #e44;
 }
 
 .CodeMirror {
@@ -81,4 +98,18 @@ body {
 
 .CodeMirror-linenumbers {
 	padding: 0 8px;
+}
+
+@media (min-width:768px)and (max-width:991px) {
+    body {
+		padding-left:10%;
+		padding-right:10%
+	}
+}
+
+@media (min-width:320px)and (max-width:768px) {
+    body {
+		padding-left:5%;
+		padding-right:5%
+	}
 }
