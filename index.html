@@ -40,7 +40,7 @@
 		<!-- Read File -->
 		<div id="ibc_fba_file">
 			<div class="pan_code"><i class="fa fa-code pull-left"></i> <strong>Ctrl-F / Cmd-F:</strong> Start searching, <strong>Ctrl-G / Cmd-G:</strong> Find next, <strong>Shift-Ctrl-G / Shift-Cmd-G:</strong> Find previous, <strong>Shift-Ctrl-F / Cmd-Option-F:</strong> Replace, <strong>Shift-Ctrl-R / Shift-Cmd-Option-F:</strong> Replace all</div>
-			<textarea id="text" name="text">
+			<textarea id="ibc_text">
  _____                ____    ______            _____     ____  
  \__  \   __  _  __  / __ \  /  ___/   ____    /     \   / __ \ 
   > __ \_ \ \/ \/ / \  ___/  \___ \   /  _ \  \  Y Y  \ \  ___/ 
@@ -50,7 +50,7 @@
             </textarea>
 		</div>
 
-		<script>var editor = CodeMirror.fromTextArea(document.getElementById("text"), {	mode: "text/html", lineNumbers: true, theme: "monokai"});</script>
+		<script>var editor = CodeMirror.fromTextArea(document.getElementById("ibc_text"), {	mode: "text/html", lineNumbers: true, theme: "monokai"});</script>
 		
 	</body>
 </html>
