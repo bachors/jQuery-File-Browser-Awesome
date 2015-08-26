@@ -16,6 +16,6 @@ var baseurl = "http://domain.com/scandir.php";
 var browser = 'download';
 </pre>
 
-<h1><a href="http://ibacor.com/file/" target="_blank">DEMO</a></h1>
+<h1><a href="http://ibacor.com/premium/file/" target="_blank">DEMO</a></h1>
 
 <h2><a href="https://github.com/bachors/CI-FIle-Browser-Awesome/" target="_blank">see also for codeigniter</a></h2>
