@@ -21,15 +21,15 @@ var fix = /\//;
 var value = getParameterByName('dir');
 if(value != ''){
 	if(value.indexOf('.') === -1){
-		ibc_fba(baseurl,sub=value,fix,browser);
+		ibc_fba(baseurl,value,fix,browser);
 	}else{
 		var valust = value.substring(value.lastIndexOf('/') + 1),
 		gehu = value.replace('/'+valust, "");
-		ibc_fba(baseurl,sub=gehu,fix,browser);
+		ibc_fba(baseurl,gehu,fix,browser);
 		ibc_fba_file(baseurl,browser+value);
 	}
 }else{
-	ibc_fba(baseurl,sub="",fix,browser)
+	ibc_fba(baseurl,"",fix,browser)
 }
 
 function ibc_fba(baseurl,sub,fix,browser) {
