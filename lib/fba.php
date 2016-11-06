@@ -20,10 +20,12 @@ class Fba {
 		
 		// Menentukan absolute URL yang menuju ke $path. Output: http://ibacor.com/download/
 		$this->linkpath = dirname($path).'/';
+		
+		$direk = str_replace($baseurl, '', $this->linkpath);
 
 		// Menentukan direktori yang akan di scan. Output: file
 		$realpath = explode('/', $path);
-		$this->dirpath = $realpath[sizeof($realpath)-1].$sub;
+		$this->dirpath = $direk.$realpath[sizeof($realpath)-1].$sub;
 		
 		$this->browser = $browser;
 		
