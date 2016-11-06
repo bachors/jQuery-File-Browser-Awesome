@@ -46,6 +46,9 @@ $baseurl = "http://your-hostname.com/";
 
 // Tentuka nama folder/direktori yang akan ditampilkan. Contoh folder1/folder2
 $browser = "files";
+
+// Include class fba.php
+include_once('lib/fba.php');
 </pre>
 
 <h3>2. Javascript code in your HTML page.</h3>
