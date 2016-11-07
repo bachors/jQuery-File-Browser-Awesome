@@ -55,15 +55,8 @@ include_once('lib/fba.php');
 <pre>
 // URL fba API
 fba(
-	apis = 'http://your-hostname.com/fba_api.php'
+	'http://your-hostname.com/fba_api.php'
 );
-
-// Codemirror
-var editor = CodeMirror.fromTextArea(document.getElementById("fba_text"),
-{
-   mode: "text/html", 
-   lineNumbers: true
-});
 </pre>
 
 <h1><a href="http://ibacor.com/file" target="_blank">DEMO</a></h1>
