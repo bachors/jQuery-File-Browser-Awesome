@@ -8,7 +8,6 @@
 #fba {
 	font-family: Arial;
 	font-size: 1em;
-	background: #fff;
 	display: block;
 }
 
@@ -50,6 +49,7 @@
 	border: 0px;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
+	background: #fff;
 }
 
 #fba .fba_body .fba_content {
