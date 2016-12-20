@@ -6,7 +6,7 @@
 *********************************************************************/
 
 var fba = function(g) {
-    if (g.host != undefined && g.api != undefined && g.dir != undefined && g.host != '' && g.api != '' && g.dir != '') {
+    if (g.host != undefined && g.api != undefined && g.host != '' && g.api != '') {
         var j = '<div class="fba_direktori"></div>' + '<div class="fba_read_file"><i class="fa fa-code"></i> <span id="rf"></span></div>' + '<textarea id="fba_text"></textarea>',
             k = getParameterByName('path');
         $("#fba").html(j);
@@ -71,13 +71,13 @@ var fba = function(g) {
                                 r += '<div class="fba_content"><div class="name"><span class="rfile fa" data-rfile="' + c.data[i].path + '"><i class="fa fa-file-text-o"></i> ' + c.data[i].name + '</span></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>';
                                 break;
                             case "apk":
-                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + g.dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-android"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
+                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + c.data[i].dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-android"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
                                 break;
                             case "pdf":
-                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + g.dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-pdf-o"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
+                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + c.data[i].dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-pdf-o"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
                                 break;
                             default:
-                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + g.dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-cloud-download"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
+                                r += '<div class="fba_content"><div class="name"><a href="' + g.host + c.data[i].dir + '/' + c.data[i].path + '" target="_blank"><i class="fa fa-cloud-download"></i> ' + c.data[i].name + '</a></div><div class="size">' + b + '</div><div class="modif">' + c.data[i].modif + '</div></div>'
                         }
                     }
                 });
