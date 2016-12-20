@@ -1,5 +1,5 @@
 /*********************************************************************
-* #### jQuery File Browser Awesome v0.0.2 ####
+* #### jQuery File Browser Awesome v0.2.0 ####
 * Coded by Ican Bachors 2014.
 * http://ibacor.com/labs/jquery-file-browser-awesome/
 * Updates will be posted to this site.
@@ -9,6 +9,7 @@
 	font-family: Arial;
 	font-size: 1em;
 	display: block;
+	color: #333;
 }
 
 #fba .fba_header,
@@ -70,14 +71,12 @@
 #fba .fba_body .fba_root {
 	border: 0px;
 	border-bottom: 1px solid #c9e6f2;
-	font-weight: bold;
 	background-color: #f2f9fc;
 	color: #888;
 	text-align: left;
 }
 
 #fba .fba_direktori {
-	font-size: 0.8em;
 	margin-bottom: 10px;
 }
 
@@ -108,20 +107,30 @@
 	color: #ea97f4;
 }
 
-#fba .fba_direktori .fa-reply {
+#fba .fba_direktori .fa-android {
+	color: #ADFF5C;
+}
+
+#fba .fba_direktori .fa-pdf-o {
+	color: #FF6C60;
+}
+
+#fba .fba_direktori .fa-level-up {
 	color: #FF5CAD;
 }
 
 #fba .fba_read_file {
-	font-size: 0.8em;
 	display: block;
 	padding: 9px 10px 10px;
 	margin: 0;
-	font-weight: bold;
 	background-color: #f5f5f5;
 	border: 1px solid #d8d8d8;
 	border-bottom: 0;
 	border-radius: 3px 3px 0 0;
+}
+
+#fba .fba_read_file #rf {
+	color: #888
 }
 
 #fba .CodeMirror {
