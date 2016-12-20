@@ -40,9 +40,11 @@
 		<!-- Include fba.js -->
 		<script src="asset/js/fba.js"></script>
 		<script>
-		fba(
-			'http://your-hostname.com/fba_api.php' // Base_URL API
-		);
+		fba({
+			host: 'http://localhost/fba/', // your host / domain
+			api: 'fba_api.php', // file name fba api
+			dir: 'files' // nama folder yang akan di scan
+		});
 		</script>
 		
 	</body>
