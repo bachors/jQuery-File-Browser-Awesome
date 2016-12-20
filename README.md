@@ -53,8 +53,7 @@ $fba =  new fba($dir);
 <pre>
 fba({
    host: 'http://your-domain.com/', // your host / domain
-   api: 'fba_api.php', // file name fba api
-   dir: 'dir1/dir2' // nama folder yang di scan
+   api: 'fba_api.php' // file name fba api
 });
 </pre>
 
