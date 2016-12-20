@@ -1,51 +1,33 @@
 <?php
 
-// Tentukan dulu base url sobat. Contoh http://ibacor.com/
-$baseurl = "http://your-hostname.com/";
-
-// Tentuka nama folder/direktori yang akan ditampilkan. Contoh folder1/folder2
-$browser = "files";
+header('Content-Type: application/json');
+// header('Access-Control-Allow-Origin: http://your-domain.com');
 
 // Include class fba.php
 include_once('lib/fba.php');
 
+$dir = 'files'; // nama folder yang akan di scan. dir1/dir2
+
+$fba =  new fba($dir);
+
 // Scan direktori
-if(isset($_POST['sub'])){
+if(isset($_POST['path'])){
 
-	$sub = (empty($_POST['sub']) ? '' : $_POST['sub']);
-
-	// Create new object
-	$fba =  new fba($baseurl, $browser, $sub);
-
-	// Jalankan fungsi scan
-	$response = $fba->scan();
+	// Jalankan fungsi scan->('SUB DIR NAME')
+	$res = $fba->scan($_POST['path']);
 	
 	// Output list direktori & file dalam format JSON
-	echo json_encode(array(
-		"root" => $fba->sub,
-		"back" => dirname($fba->sub),
-		"items" => $response
-	));
+	echo json_encode($res);
 	
 }
 
 // Read file
 else if(!empty($_POST['file'])){
 
-	// Create new object
-	$fba =  new fba($baseurl, $browser, '');
+	// Jalankan fungsi scan->('SUB DIR NAME')
+	$res = $fba->read($_POST['file']);
 	
-	$sub = $_POST['file'];
+	// Output isi file
+	echo json_encode($res);
 
-	$text = file_get_contents($fba->browser.$sub);
-	
-	echo json_encode(array(
-		"text" => $text
-	));
-
-}
-
-// 404
-else{
-	header('Location: '.$baseurl);
 }
