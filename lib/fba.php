@@ -73,6 +73,7 @@ class Fba {
 					$files['data'][] = array(
 						"name" => $f,
 						"type" => "file",
+						"dir" => $this->path,
 						"path" => (empty($path) ? $f : $path . '/' .$f),
 						"modif" => date('Y-m-d h:i:s',filemtime($browser . '/' . $f)),
 						"size" => filesize($browser . '/' . $f) // Mendapatkan ukuran file
