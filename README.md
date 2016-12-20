@@ -41,22 +41,21 @@ jQuery-File-Browser-Awesome
 <h2>CONFIG:</h2>
 <h3>1. fba_api.php</h3>
 <pre>
-// Tentukan dulu base url sobat. Contoh http://ibacor.com/
-$baseurl = "http://your-hostname.com/";
-
-// Tentuka nama folder/direktori yang akan ditampilkan. Contoh folder1/folder2
-$browser = "files";
-
 // Include class fba.php
 include_once('lib/fba.php');
+
+$dir = 'dir1/dir2'; // nama folder yang akan di scan.
+
+$fba =  new fba($dir);
 </pre>
 
 <h3>2. Javascript code in your HTML page.</h3>
 <pre>
-// URL fba API
-fba(
-	'http://your-hostname.com/fba_api.php'
-);
+fba({
+   host: 'http://your-domain.com/', // your host / domain
+   api: 'fba_api.php', // file name fba api
+   dir: 'dir1/dir2' // nama folder yang di scan
+});
 </pre>
 
 <h1><a href="http://ibacor.com/file" target="_blank">DEMO</a></h1>
