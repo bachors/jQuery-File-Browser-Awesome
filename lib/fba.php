@@ -1,7 +1,7 @@
 <?php
 
 /*********************************************************************
-* #### jQuery File Browser Awesome v0.0.2 ####
+* #### jQuery File Browser Awesome v0.2.0 ####
 * Coded by Ican Bachors 2014.
 * http://ibacor.com/labs/jquery-file-browser-awesome/
 * Updates will be posted to this site.
@@ -9,27 +9,9 @@
 
 class Fba {
 	
-	private $baseurl;
-	public $browser;	
-	public $sub;
-	
-	function __construct($baseurl, $browser, $sub)
+	function __construct($path)
     {
-		// Full path direktori
-		$path = $baseurl.$browser;
-		
-		// Menentukan absolute URL yang menuju ke $path. Output: http://ibacor.com/download/
-		$this->linkpath = dirname($path).'/';
-		
-		$direk = str_replace($baseurl, '', $this->linkpath);
-
-		// Menentukan direktori yang akan di scan. Output: file
-		$realpath = explode('/', $path);
-		$this->dirpath = $direk.$realpath[sizeof($realpath)-1].$sub;
-		
-		$this->browser = $browser;
-		
-		$this->sub = $sub;
+		$this->path = $path;
     }
 
 	// funsi ini untuk mendapatkan jumlah item dalam sebuah folder
@@ -47,49 +29,80 @@ class Fba {
 		return $files;
 	}
 
-	// Fungsi ini untuk menscan folder secara rekursif, dan membangunnya menjadi array
-	public function scan(){
+	// Fungsi ini untuk melihat isi folder
+	public function scan($path = ''){
 
 		$files = array();
+		
+		if(preg_match('/\.\./', $path)){
+			
+			$path = '';
+
+		}
+			
+		$files['status'] = 'success';
+		
+		$browser = (empty($path) ? $this->path : $this->path . '/' .$path);
 
 		// Apakah benar-benar terdapat folder/file?
-		if(file_exists($this->dirpath)){
-		
-			foreach(scandir($this->dirpath) as $f) {
+		if(file_exists($browser)){
+				
+			$files['status'] = 'success';
 			
+			foreach(scandir($browser) as $f) {
+				
 				if(!$f || $f[0] == '.') {
 					continue; // Abaikan file tersembunyi
 				}
 
-				if(is_dir($this->dirpath . '/' . $f)) {
+				if(is_dir($browser . '/' . $f)) {
 
 					// List folder
-					$files[] = array(
+					$files['data'][] = array(
 						"name" => $f,
-						"type" => "folder",
-						"modif" => date('Y-m-d h:i:s',filemtime($this->dirpath . '/' . $f)),
-						"path" => str_replace($this->browser, '', $this->sub . '/' . $f),
-						"items" => $this->item($this->dirpath . '/' . $f) // Menscan lagi isi folder
+						"type" => "dir",
+						"modif" => date('Y-m-d h:i:s',filemtime($browser . '/' . $f)),
+						"path" => (empty($path) ? $f : $path . '/' .$f),
+						"items" => count($this->item($browser . '/' . $f)) // Menscan lagi isi folder
 					);
 				}
-				
+					
 				else {
 
 					// List file
-					$files[] = array(
+					$files['data'][] = array(
 						"name" => $f,
 						"type" => "file",
-						"link" => $this->linkpath,
-						"path" => str_replace($this->browser, '', $this->dirpath . '/' . $f),
-						"modif" => date('Y-m-d h:i:s',filemtime($this->dirpath . '/' . $f)),
-						"size" => filesize($this->dirpath . '/' . $f) // Mendapatkan ukuran file
+						"path" => (empty($path) ? $f : $path . '/' .$f),
+						"modif" => date('Y-m-d h:i:s',filemtime($browser . '/' . $f)),
+						"size" => filesize($browser . '/' . $f) // Mendapatkan ukuran file
 					);
 				}
 			}
-		
+			
+		}else{
+			$files['status'] = 'error';
 		}
 
 		return $files;
+	}
+
+	// funsi ini untuk melihat isi file
+	public function read($file){
+		
+		if(preg_match('/\.\./', $file)){
+			
+			return array('status' => 'error');
+
+		}else{
+		
+			$browser = (empty($file) ? $this->path : $this->path . '/' .$file);
+
+			$text = file_get_contents($browser);
+
+			return array('status' => 'success', 'text' => $text);
+		
+		}
 	}
 
 }
