@@ -17,13 +17,17 @@ class Fba {
 	// funsi ini untuk mendapatkan jumlah item dalam sebuah folder
 	private function item($dir){
 
-		foreach(scandir($dir) as $f) {		
-			if(!$f || $f[0] == '.') {
-				continue; // Abaikan file tersembunyi
+		$files = array();
+		
+		if(scandir($dir)){
+			foreach(scandir($dir) as $f) {		
+				if(!$f || $f[0] == '.') {
+					continue; // Abaikan file tersembunyi
+				}
+				$files[] = array(
+					"name" => $f
+				);
 			}
-			$files[] = array(
-				"name" => $f
-			);
 		}
 
 		return $files;
